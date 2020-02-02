@@ -14,7 +14,7 @@ const data = {
     body: this.state.body,
     author: this.state.author
 }
-axios.post('https://jsonplaceholder.typicode.com/posts/', data)
+axios.post('/posts/', data)
 .then(response => {
     console.log(response)
 })
