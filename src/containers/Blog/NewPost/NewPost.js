@@ -10,6 +10,7 @@ class NewPost extends Component {
         submit: false
     }
     componentDidMount(){
+        // this.props.history.replace('/posts')
         console.log(this.props)
     }
 postDataHandler = () =>{
@@ -21,7 +22,8 @@ const data = {
 axios.post('/posts', data)
 .then(response => {
     console.log(response)
-    this.setState({submit: true})
+    this.props.history.push('/posts')
+    // this.setState({submit: true})
 })
 }
     render () {
