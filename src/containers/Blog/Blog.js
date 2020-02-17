@@ -4,7 +4,7 @@ import Posts from '../Blog/Posts/Posts';
 // import FullPost from './FullPost/FullPost';
 // import NewPost from './NewPost/NewPost';
 import './Blog.css';
-import { Route,NavLink, Switch } from 'react-router-dom'
+import { Route,NavLink, Switch, Redirect } from 'react-router-dom'
 import NewPost from './NewPost/NewPost'
 class Blog extends Component {
     
@@ -22,6 +22,7 @@ class Blog extends Component {
                             exact
                             activeClassName='my-active'
                             activeStyle={{color: '#fa923f', textDecoration:'underline'}}>Posts</NavLink></li>
+                            
                             <li><NavLink to={{pathname: '/new-post', 
                             hash:'#submit', 
                             search: '?submit=true'}}> New Post</NavLink></li>
@@ -34,6 +35,7 @@ class Blog extends Component {
                 <Switch>
                 <Route path='/new-post' component={NewPost} />
                 <Route path='/posts' component={Posts} />
+                <Redirect from='/' to='/posts' />
                 </Switch>
                 
             </div>
